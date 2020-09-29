@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERMINAL MNW</title>
+    <link rel="stylesheet" href="styles/normalize-3.0.3.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body onload="initialize();" onkeydown="pressKey(event.key);">
+    <noscript>
+        <div class="terminal noscript">
+            <img src="images/js-icon.png">
+            <h1>Ce terminal fonctionne avec du langage Javascript.</h1>
+            <h2>Veuillez activer Javascript sur votre navigateur pour profiter des fonctionnalités de ce site.</h2>
+        </div>
+    </noscript>
+    <div id="terminal" class="terminal">
+        <div id="inner" class="inner"></div>
+        <div id="console" class="console">
+            <input id="input" type="text" autofocus>
+        </div>
+    </div>
+    <audio id="audio" controls="controls" hidden>
+        <source src="audio/mp3.mp3" type="audio/mp3" />
+        Votre navigateur n'est pas compatible
+    </audio>
+    <script type='text/javascript' src='scripts/commands.js'></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

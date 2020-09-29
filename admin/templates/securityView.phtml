@@ -1,0 +1,31 @@
+<div class="block-main">
+    <div class="half-block">
+        <h2>Les informations de votre machine</h2>
+        <div class="logs info-computer">
+            <p>Votre adresse Ip actuelle : <?=$_SERVER['REMOTE_ADDR']?></p>
+            <p>Vos informations machine : <?=$_SERVER['HTTP_USER_AGENT']?></p>
+        </div>
+    </div>
+    <div class="half-block">
+        <h2>Tableau de bord</h2>
+        <div class="list-logs">
+            <?php if(count($bdd) == 0) {?>
+                <p>Aucun log à afficher</p>
+            <?php
+                } else {
+                $i = 0;
+                while($i < 5 && $i < count($bdd)) {
+            ?>
+            <div class="logs logs-error">
+                <h3><?= $bdd[$i]['description']?><br></h3>
+                <?= $bdd[$i]['info_ip']?><br>
+                <?= $bdd[$i]['info_computer']?><br>
+                <?= $bdd[$i]['created_at']?><br>
+                </div>
+            <?php
+                $i++;
+                }}
+            ?>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="block-main">
+    <div class="filter-block" id="filter-block" onclick="closeBlock()"></div>
+    <div class="personal-settings">
+        <div>
+            <label>Modifier votre email</label>
+            <input id="input-email" onclick="openBlock('email')" type="text" value="<?=$bdd[0]['email']?>" id="email" style="cursor: pointer; caret-color: transparent;" ></a>
+        </div>
+        <div>
+            <label>Modifier votre mot de passe</label>
+            <input id="input-pass" onclick="openBlock('pass')" type="password" value="password" style="cursor: pointer; caret-color: transparent;">
+        </div>
+    </div>
+    <div class="others-settings">
+        <p><?= $_SERVER['HTTP_USER_AGENT']?></p>
+        <p><?= $_SERVER['SERVER_SIGNATURE']?></p>
+        <p><?= $_SERVER['REMOTE_ADDR']?></p>
+    </div>
+    <div class="change-block" id="change-pass">
+        <button onclick="closeBlock()"><i class="fas fa-times-circle"></i></button>
+        <form method="POST">
+            <input type="password" name="verif_password">
+            <input type="password" name="new_password">
+            <input type="password" name="verif_new_password">
+            <button type="submit" name="submitPass">Modifier</button>
+        </form>
+    </div>
+    <div class="change-block" id="change-email">
+        <button onclick="closeBlock()"><i class="fas fa-times-circle"></i></button>
+        <form method="POST">
+            <input type="email" name="verif_email">
+            <input type="email" name="new_email">
+            <input type="email" name="verif_new_email">
+            <button type="submit" name="submitEmail">Modifier</button>
+        </form>
+    </div>      
+</div>

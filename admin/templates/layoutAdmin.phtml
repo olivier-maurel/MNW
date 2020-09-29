@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNWadmin - <?=$title?></title>
+    <link rel="stylesheet" href="../styles/normalize-3.0.3.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="../styles/style.css"/>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="navbar">
+        <!-- <div class="nav"> -->
+            <section>
+                <h3>Bienvenue, <?=$login[0]['username']?></h3>
+            </section>
+
+            <nav>
+                <ul>
+                    <li><a href="previewAdmin.php"><i class="fas fa-project-diagram"></i></a></li>
+                    <li><a href="managementAdmin.php"><i class="fas fa-edit"></i></a></li>
+                    <li><a href="securityAdmin.php"><i class="fas fa-lock"></i></a></li>
+                    <li><a href="securityAdmin.php"><i class="fas fa-comment"></i></a></li>
+                    <li><a href="settingsAdmin.php"><i class="fas fa-cogs"></i></a></li>
+                    <li><a href="../applications/logout.php"><i class="fas fa-power-off"></i></a></li>
+                </ul>
+            </nav>
+        <!-- </div> -->
+    </div>
+
+    <main>
+        <?php include "$template.phtml" ?>
+    </main>
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

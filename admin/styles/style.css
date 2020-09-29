@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'CODE';
+    src: url('../fonts/CODE\ Bold.otf');
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #272b33;
+    font-family: 'CODE';
+}
+h1, h2, h3, h4, ul, a {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+.background {
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/backgrounds/admin_login_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    opacity: 0.01;
+    filter: blur(1px);
+}
+
+
+
+
+
+
+
+/*********************************************/
+/******************** LOGIN ******************/
+/*********************************************/
+.maunavweb {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color : #C7C7C7;
+}
+.block {
+    width: 100%;
+    height: 100vh;
+}
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff10;
+    padding: 30px;
+}
+.login form input, .login form button{
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
+    background-color: #C7C7C7;
+}
+
+
+
+
+
+
+/*********************************************/
+/******************* LAYOUT ******************/
+/*********************************************/
+main {
+    width: 100%;
+    height: calc(80vh - 50px);
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    width : 100%;
+    height : 50px;
+    background-color: #505061;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+nav {
+    width : 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+.navbar li {
+    width: 55px;
+    height: 50px;
+    transition: .3s;
+}
+.navbar li:hover .fas{
+    color: #C7C7C7;
+}
+.navbar li:hover {
+    background-color: #ffffff05;
+}
+.navbar a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fas {
+    color: #272b33;
+    transition: .3s;
+    font-size: 20px;
+}
+.block-main {
+    position: relative;
+    height: calc(80vh - 50px);
+    width : 1220px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6a6f7c;
+}
+
+
+
+
+
+
+
+
+
+/*********************************************/
+/***************** SETTINGS ******************/
+/*********************************************/
+.personal-settings {
+    width: 50%;
+}
+.personal-settings div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.change-block {
+    position: absolute;
+    width: 35%;
+    height: 80%;
+    background-color: #2d2c38;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+.change-block #exit {
+    position: absolute;
+    top : -11px;
+    right: -11px;
+    font-size: 25px;
+    color: #683e3e;
+}
+.change-block form {
+    display: flex;
+    flex-direction: column;
+}
+.change-block input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.filter-block {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: calc(80vh - 50px);
+    background-color: #000000CC;
+    transition: .2s;
+}
+.button-input {
+    z-index: 3;
+    position: relative;
+    background-color: transparent;
+    border : none;
+}
+
+
+
+
+
+/*********************************************/
+/***************** SECURITY ******************/
+/*********************************************/
+.half-block {
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+    background-color: #ffffff10;
+    padding: 10px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+.list-logs {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.logs {
+    background-color: #aa5858;
+    border: 1px solid #919191;
+    width: calc(100% - 10px);
+    font-size: 13px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 3px;
+    transition: .2s;
+}
+.logs-error:hover {
+     background-color: #a84a4a;
+}
+.info-computer {
+    background-color: #5859aa;
+}

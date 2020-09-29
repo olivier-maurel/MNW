@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #272b33;
+}
+.terminal {
+    position: relative;
+    width: 95%;
+    height: 90vh;
+    background-color: #000000a6;
+    overflow: auto;
+    padding: 15px;
+    box-shadow: 0px 0px 5px #000;
+    border: solid 2px #505061;
+    /*! border-radius: 20px; */
+    scrollbar-width: none;
+}
+.noscript {
+    z-index: 99;
+    position: absolute;
+    top: 5vh;
+    box-shadow: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.console {   
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 10px;
+}
+
+.terminal input {
+    width: 100%;
+    position: relative;
+    left: 0;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: default;
+}
+
+.pre-h {
+    background-color: #C0C0C020;
+    text-align: center;
+    font-weight: bold;
+}
+.window {
+    background-color: #000;
+    border: #ffffff40 solid 2px;
+}
+.pre-h-t {
+    background-color: #ffffff40;
+    box-shadow: 0px 0px 2px black inset;
+    box-shadow: 25px 0px 49px #ffffff;
+    text-align: center;
+    border: none;
+}
+.pre-sub-h-t {
+    background-color: #ffffff20;
+    box-shadow: 25px 0px 49px #ffffff7a;
+}
+.pre-t{
+    background-color: #C0C0C020;
+    text-align: center;
+}
+.pre-t:nth-child(2n){
+    background-color: #ffffff10;
+}
+.pre-t-bg-d {
+    background-color: #ffffff10;
+}
+.pre-t span {
+    color: #333333;
+}
+.pre-n span {
+    color: #999999;
+}
+.pre-n{
+    background-color: #C0C0C020;
+}
+.pre-n:nth-child(2n){
+    background-color: #ffffff10;
+}
+.pre-n i {
+    font-weight: bold;
+}
+.profil-picture {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    opacity: 0.4;
+}
+
+
+
+
+
+
+span .no-lvl {
+    color: #444444;
+}
+span .heart {
+    color: #ac4d4d;
+}
+span .ocean {
+    color: #75d2ff;
+}
+span .snow {
+    color: white;
+}
+.black {
+    color: transparent;
+}
+.blue {
+    color: #75d2ff;
+}
+.green {
+    color: #68b068;
+}
+.white {
+    color: white;
+}
+.sun {
+    color: yellow;
+}
+.egg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.txc {
+    text-align: center;
+}
+.txl {
+    text-align: left;
+}
