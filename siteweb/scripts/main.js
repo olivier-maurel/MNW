@@ -4,22 +4,43 @@ centerBlock = document.getElementById('centerBlock');
 pattern.style.top = '-100vh';
 pattern.style.left = '-100vw';
 
-numBalls = 100;
-colors = ["#534468", "#696175", "#5e6271", "#3d435b", "#4e3457"];
-for (let i = 0; i < numBalls; i++) {
-    let ball = document.createElement("div");
-    ball.classList.add("ball");
-    ball.style.background = colors[Math.floor(Math.random() * colors.length)];
-    ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
-    ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
-    ball.style.transform = `scale(${Math.random()})`;
-    ball.style.width = `${Math.random()}rem`;
-    ball.style.height = ball.style.width;
-    
-    // balls.push(ball);
-    centerBlock.append(ball);
-}
+// numBalls = 400;
+// //colors = ["#534468", "#696175", "#5e6271", "#3d435b", "#4e3457"];
+// colors = ["#ffffff50", "#ffffff30", "#ffffff90", "#ffffff70", "#ffffffAA"];
+// for (let i = 0; i < numBalls; i++) {
+//     let ball = document.createElement("div");
+//     ball.classList.add("ball");
+//     ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+//     ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+//     ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+//     ball.style.transform = `scale(${Math.random()})`;
+//     ball.style.width = `${Math.random() / 2}rem`;
+//     ball.style.height = ball.style.width;
+//     centerBlock.append(ball);
+// }
 
+function canvasParticles() {
+    canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context = canvas.getContext("2d");
+
+    numPart = 100;
+    colors = ["#ffffff", "#98B9FF", "#FFB198", "#FAFF98"];
+    for (let j = 0; j < colors.length; j++) {
+        context.beginPath();
+        for (let i = 0; i < numPart; i++) {
+            widthPart = Math.random() * 1.7;
+            xPart = Math.floor(Math.random() * canvas.width);
+            yPart = Math.floor(Math.random() * canvas.height);
+            context.fillStyle = colors[j];
+            context.arc(xPart, yPart, widthPart, 0, Math.PI*2, true);
+            context.closePath();
+        }
+        context.fill();
+    }
+}
+canvasParticles();
 
 
 

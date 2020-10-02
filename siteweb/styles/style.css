@@ -63,13 +63,13 @@ body {
 }
 @keyframes ballAnim {
     0% {
-        transform: translateY(0%);
+        scale: 1;
     }
     50% {
-        transform: translateY(50%);
+        scale: 1.05;
     }
     100% {
-        transform: translateY(0%);
+        scale: 1;
     }
 }
 @keyframes backgroundAnim {
@@ -83,6 +83,17 @@ body {
     }
     100% {
         background-position: 50% 50%;
+        background-size: 100%;
+    }
+}
+@keyframes backgroundAnim2 {
+    0% {
+        background-size: 100%;
+    }
+    50% {
+        background-size: 105%;
+    }
+    100% {
         background-size: 100%;
     }
 }
@@ -101,13 +112,13 @@ body {
     width: 100vw;
 }
 .top-block {
-    background-color: #2c2340;
+    background-color: #2d2340;
     top: 0;
     left: 150vw;
     transform: translateX(-50%);
 }
 .left-block {
-    background-color: #2d2340;
+    background-color: #2d233f;
     left: 0;
     top: 149.9vh;
     transform: translateY(-50%);
@@ -122,13 +133,13 @@ body {
     overflow: hidden;
 }
 .right-block {
-    background-color: #2d2340;
+    background-color: #2c233f;
     right: 0;
     top: 149.9vh;
     transform: translateY(-50%);
 }
 .bottom-block {
-    background-color: #2d2240;
+    background-color: #2c233f;
     bottom: 0;
     left: 150vw;
     transform: translateX(-50%);
@@ -206,8 +217,13 @@ body {
     background-position: top;
     opacity: 0.1;
 }
+.bg3 {
+    background-image: url('../images/galaxy-bg.jpg');
+    opacity: 0.15;
+    animation: backgroundAnim2 60s infinite cubic-bezier(.65,.45,.36,.63);
+}
 .background-color {
-    background-image: radial-gradient(#fff0, #2c253d);
+    background-image: radial-gradient(#fff0 , #2c253d);
 }
 .center-block h1{
     /* z-index: 1; */
@@ -311,31 +327,43 @@ body {
     animation: fragmentAnim_2 35s infinite linear;
     opacity: 0.2;
 }
-.ball {
-    position: absolute;
-    border-radius: 50%;
-    animation: ballAnim 5s infinite;
-    opacity: 0.4;
-    box-shadow: 0px 0px 2px #00000090 inset;
+canvas {
+    z-index: -1;
+    position: relative;
+    opacity: 0.3;
+    animation: ballAnim 30s linear infinite;
 }
-/* .border-block-left {
-    position: absolute;
-    right: 0;
-    height: 100vh;
-    width: 90px;
-}
-.border-block-left div:nth-child(1) {
-    height: 40vh;
-    width: 90px;
-    background-image: linear-gradient(109deg, transparent 50%, #2a2839 50%); 
-}
-.border-block-left div:nth-child(2) {
-    height: 60vh;
-    width: 90px;
-    background-image: linear-gradient(77deg, transparent 50%, #2a2839 50%); 
-} */
 /**** BACKGROUND-CENTER ****/
 /**** BACKGROUND-CENTER ****/
+
+
+
+
+/**** PROFIL ****/
+/**** PROFIL ****/
+.profil {
+    width: 80vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profil-picture {
+    width: 20vw;
+    height: 100%;
+    background-image: url('../images/profil.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+/**** PROFIL ****/
+/**** PROFIL ****/
+
+
+
+
 
 /**** CONTACT ****/
 /**** CONTACT ****/

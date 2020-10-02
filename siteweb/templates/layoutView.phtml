@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="styles/normalize-3.0.3.min.css"/>
 </head>
 <body onkeyup="keyPress(event.key)">
-<!-- <div style="position: relative; z-index: 999;"><?php phpinfo(); ?></div> -->
-
+            <div class="block background-color">
+                <div class="background bg3"></div>
+            </div>
     <div id="pattern" class="pattern">
         <a id="arrowUp" onclick="arrowPress(arrowUp)" href="#" class="arrow-up arrow"></a>
         <a id="arrowLeft" onclick="arrowPress(arrowLeft)" href="#" class="arrow-left arrow"></a>
         <a id="arrowDown" onclick="arrowPress(arrowDown)" href="#" class="arrow-down arrow"></a>
         <a id="arrowRight" onclick="arrowPress(arrowRight)" href="#" class="arrow-right arrow"></a>
-        <div class="top-block block"></div>
+        <div class="top-block block">
+            <div class="profil">
+                <div class="profil-picture"></div>
+            </div>
+        </div>
         <div class="left-block block">
-            <!-- <div class="border-block-left">
-                <div></div>
-                <div></div>
-            </div> -->
+            <div class="blog">
+
+            </div>
         </div>
         <div id="centerBlock" class="center-block block">
             <h1 id="title">Olivier Maurel</h1>
@@ -36,9 +40,13 @@
             <div class="fragment mini-frag5"></div>
             <div class="background"></div>
             <div class="background bg2"></div>
-            <div class="block background-color"></div>
+            <canvas id="canvas"></canvas>
         </div>
-        <div class="right-block block"></div>
+        <div class="right-block block">
+            <div class="portfolio">
+
+            </div>
+        </div>
         <div class="bottom-block block">
             <div class="contact">
                 <form method="POST">
@@ -53,6 +61,11 @@
             </div>
         </div>
     </div>
+    <noscript>
+        Ce site internet utilise principalement du Javascript.
+        Veuillez activer Javascript pour profiter des fonctionnalités de ce site.
+        <!-- FAIRE UNE PAGE SIMPLE SANS JAVASCRIPT -->
+    </noscript>
     <script src="scripts/main.js"></script>
 </body>
 </html>
