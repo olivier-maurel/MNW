@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +7,51 @@
     <link rel="stylesheet" href="styles/style.css"/>
     <link rel="stylesheet" href="styles/normalize-3.0.3.min.css"/>
 </head>
-<body onkeydown="keyPress(event.key)">
+<body onkeyup="keyPress(event.key)">
+<!-- <div style="position: relative; z-index: 999;"><?php phpinfo(); ?></div> -->
+
     <div id="pattern" class="pattern">
+        <a id="arrowUp" onclick="arrowPress(arrowUp)" href="#" class="arrow-up arrow"></a>
+        <a id="arrowLeft" onclick="arrowPress(arrowLeft)" href="#" class="arrow-left arrow"></a>
+        <a id="arrowDown" onclick="arrowPress(arrowDown)" href="#" class="arrow-down arrow"></a>
+        <a id="arrowRight" onclick="arrowPress(arrowRight)" href="#" class="arrow-right arrow"></a>
         <div class="top-block block"></div>
-        <div class="left-block block"></div>
-        <div class="center-block block">
-            <h1>Olivier Maurel</h1>
+        <div class="left-block block">
+            <!-- <div class="border-block-left">
+                <div></div>
+                <div></div>
+            </div> -->
+        </div>
+        <div id="centerBlock" class="center-block block">
+            <h1 id="title">Olivier Maurel</h1>
+            <div class="fragment frag1"></div>
+            <div class="fragment frag2"></div>
+            <div class="fragment frag3"></div>
+            <div class="fragment frag4"></div>
+            <div class="fragment frag5"></div>
+            <div class="fragment mini-frag1"></div>
+            <div class="fragment mini-frag2"></div>
+            <div class="fragment mini-frag3"></div>
+            <div class="fragment mini-frag4"></div>
+            <div class="fragment mini-frag5"></div>
+            <div class="background"></div>
+            <div class="background bg2"></div>
+            <div class="block background-color"></div>
         </div>
         <div class="right-block block"></div>
-        <div class="bottom-block block"></div>
+        <div class="bottom-block block">
+            <div class="contact">
+                <form method="POST">
+                    <div class="input-name">
+                        <input type="text" placeholder="Votre prénom">
+                        <input type="text" placeholder="Votre nom de famille">
+                    </div>
+                    <input type="mail" placeholder="Votre adresse mail">
+                    <textarea placeholder="Votre message"></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
     </div>
     <script src="scripts/main.js"></script>
 </body>

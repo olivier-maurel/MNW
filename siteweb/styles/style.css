@@ -1,6 +1,6 @@
 @font-face{
     font-family: 'Glitch';
-    src: url(../fonts/Glitch.ttf);
+    src: url(../fonts/Lequire.otf);
 }
 
 * {
@@ -14,10 +14,78 @@ body {
     font-size: 1.6rem;
     overflow: hidden;
     font-family: 'Glitch';
+    background-color: #272b33;
 }
 
-
-
+@keyframes fragmentAnim_1{
+    0% {
+        transform: rotate(0deg);
+        scale: 1;
+    }
+    25% {
+        transform: rotate(90deg);
+        scale: 1.2;
+    }
+    50% {
+        transform: rotate(180deg);
+        scale: 1;
+    }
+    75% {
+        transform: rotate(270deg);
+        scale: 1.2;
+    }
+    100% {
+        transform: rotate(360deg);
+        scale: 1;
+    }
+}
+@keyframes fragmentAnim_2{
+    0% {
+        transform: rotate(360deg);
+        scale: 1;
+    }
+    25% {
+        transform: rotate(270deg);
+        scale: 1.1;
+    }
+    50% {
+        transform: rotate(180deg);
+        scale: 1;
+    }
+    75% {
+        transform: rotate(90deg);
+        scale: 1.05;
+    }
+    100% {
+        transform: rotate(0deg);
+        scale: 1;
+    }
+}
+@keyframes ballAnim {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+@keyframes backgroundAnim {
+    0% {
+        background-position: 50% 50%;
+        background-size: 100%;
+    }
+    50% {
+        background-position: 30% 30%;
+        background-size: 115%;
+    }
+    100% {
+        background-position: 50% 50%;
+        background-size: 100%;
+    }
+}
 
 /****STRUCTURE****/
 /****STRUCTURE****/
@@ -33,33 +101,40 @@ body {
     width: 100vw;
 }
 .top-block {
-    background-color: pink;
+    background-color: #2c2340;
     top: 0;
     left: 150vw;
     transform: translateX(-50%);
 }
 .left-block {
-    background-color: yellow;
+    background-color: #2d2340;
     left: 0;
-    top: 150vh;
+    top: 149.9vh;
     transform: translateY(-50%);
 }
-.center-block {
-    background-color: red;
+#centerBlock {
+    z-index: 1;
+    position: relative;
+    background-color: #2b2f36;
+    background-image: radial-gradient(#301d4a 90%, #2b2f36 10%);
     left: 100vw;
     top: 100vh;
+    overflow: hidden;
 }
 .right-block {
-    background-color: green;
+    background-color: #2d2340;
     right: 0;
-    top: 150vh;
+    top: 149.9vh;
     transform: translateY(-50%);
 }
 .bottom-block {
-    background-color: blue;
+    background-color: #2d2240;
     bottom: 0;
     left: 150vw;
     transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /****STRUCTURE****/
 /****STRUCTURE****/
@@ -68,8 +143,221 @@ body {
 
 /****DIRECTION****/
 /****DIRECTION****/
-
-
+.arrow {
+    z-index: 5;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+    transition: 1s;
+}
+.arrow-up {
+    background-image: url('../images/icons/chevron-up-solid.png');
+    top: calc(100vh + 10px);
+    left: 150vw;
+    transform: translateX(-50%);
+}
+.arrow-left {
+    background-image: url('../images/icons/chevron-left-solid.png');
+    top: 150vh;
+    left: calc(100vw + 10px);
+    transform: translateY(-50%);
+}
+.arrow-down {
+    background-image: url('../images/icons/chevron-down-solid.png');
+    bottom: calc(100vh + 10px);
+    left: 150vw;
+    transform: translateX(-50%);
+}
+.arrow-right {
+    background-image: url('../images/icons/chevron-right-solid.png');
+    top: 150vh;
+    right: calc(100vw + 10px);
+    transform: translateY(-50%);
+}
+.arrow:hover {
+    opacity: 0.5;
+    transition: .5s;
+}
 
 /****DIRECTION****/
 /****DIRECTION****/
+
+
+/**** BACKGROUND-CENTER ****/
+/**** BACKGROUND-CENTER ****/
+.background {
+    z-index: -1;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../images/triangle-bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.1;
+    animation: backgroundAnim 60s infinite cubic-bezier(.65,.45,.36,.63);
+}
+.bg2 {
+    transform: rotate(180deg);
+    background-position: top;
+    opacity: 0.1;
+}
+.background-color {
+    background-image: radial-gradient(#fff0, #2c253d);
+}
+.center-block h1{
+    /* z-index: 1; */
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translateY(-50%) translateX(-50%);
+    color: #fff6;
+    font-size: 12rem;
+    margin: 0;
+    width: 1010px;
+    transition: 1s;
+    text-shadow: 0px 0px 10px #ffffff40;
+}
+.fragment {
+    position: absolute;
+    opacity: 0.1;
+}
+.frag1 {
+    bottom: 0vh;
+    left: 0vw;
+    width: 150px;
+    height: 150px;
+    background-image: linear-gradient(45deg, #505061 50%, transparent 50%);
+    animation: fragmentAnim_1 30s infinite linear;
+}
+.frag2{
+    top: 25vh;
+    left: 90vw;
+    width: 180px;
+    height: 130px;
+    background-image: linear-gradient(35deg, #505061 50%, transparent 50%);
+    animation: fragmentAnim_2 20s infinite linear;
+}
+.frag3{
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    background-image: linear-gradient(135deg, #505061 51%, transparent 50%);
+    animation: fragmentAnim_2 25s infinite linear;
+}
+.frag4{
+    top: 40vh;
+    left: 60vw;
+    width: 200px;
+    height: 200px;
+    background-image: linear-gradient(135deg, #505061 51%, transparent 50%);
+    animation: fragmentAnim_1 25s infinite linear;
+}
+.frag5{
+    top: 25vh;
+    left: 30vw;
+    width: 160px;
+    height: 160px;
+    background-image: linear-gradient(45deg, #505061 51%, transparent 50%);
+    animation: fragmentAnim_2 35s infinite linear;
+}
+.mini-frag1 {
+    bottom: 37vh;
+    left: 20vw;
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(45deg, #47426a 50%, transparent 50%);
+    animation: fragmentAnim_1 30s infinite linear;
+    opacity: 0.15;
+}
+.mini-frag2 {
+    bottom: 10vh;
+    left: 80vw;
+    width: 70px;
+    height: 70px;
+    background-image: linear-gradient(45deg, #47426a 50%, transparent 50%);
+    animation: fragmentAnim_2 30s infinite linear;
+    opacity: 0.2;
+}
+.mini-frag3 {
+    top: 40vh;
+    left: 45vw;
+    width: 80px;
+    height: 80px;
+    background-image: linear-gradient(45deg, #47426a 50%, transparent 50%);
+    animation: fragmentAnim_1 30s infinite linear;
+    opacity: 0.2;
+}
+.mini-frag4 {
+    top: 5vh;
+    right: 20vw;
+    width: 110px;
+    height: 110px;
+    background-image: linear-gradient(45deg, #47426a 50%, transparent 50%);
+    animation: fragmentAnim_2 20s infinite linear;
+    opacity: 0.2;
+}
+.mini-frag5 {
+    bottom: 7vh;
+    left: 10vw;
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(45deg, #47426a 50%, transparent 50%);
+    animation: fragmentAnim_2 35s infinite linear;
+    opacity: 0.2;
+}
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    animation: ballAnim 5s infinite;
+    opacity: 0.4;
+    box-shadow: 0px 0px 2px #00000090 inset;
+}
+/* .border-block-left {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 90px;
+}
+.border-block-left div:nth-child(1) {
+    height: 40vh;
+    width: 90px;
+    background-image: linear-gradient(109deg, transparent 50%, #2a2839 50%); 
+}
+.border-block-left div:nth-child(2) {
+    height: 60vh;
+    width: 90px;
+    background-image: linear-gradient(77deg, transparent 50%, #2a2839 50%); 
+} */
+/**** BACKGROUND-CENTER ****/
+/**** BACKGROUND-CENTER ****/
+
+/**** CONTACT ****/
+/**** CONTACT ****/
+.contact {
+    width: 80vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+.contact input {
+    background-color: #2a283990;
+    border: none;
+    padding: 5px 10px;
+}
+.contact button {
+    width: 100%;
+}
+
+/**** CONTACT ****/
+/**** CONTACT ****/
